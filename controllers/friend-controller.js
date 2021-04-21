@@ -27,7 +27,7 @@ const friendController = {
     Friend.findOneAndDelete({ _id: params.friendId })
       .then(deletedFriend => {
         if (!deletedFriend) {
-          return res.status(404).json({ message: 'No thought with this id!' });
+          return res.status(404).json({ message: 'No friend with this id!' });
         }
         return User.findOneAndUpdate(
           { _id: params.userId },
